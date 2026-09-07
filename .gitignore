@@ -1,0 +1,16 @@
+# Public repository allowlist: private files are ignored by default.
+*
+!.gitignore
+!.nojekyll
+!README.md
+!PRIVACY.md
+!requirements-test.txt
+!index.html
+!relationship-os.html
+!src/
+!src/**
+!scripts/
+!scripts/**
+!tests/
+!tests/**
+**/__pycache__/
