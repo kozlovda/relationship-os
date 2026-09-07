@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f6f2eb">
   <title>Relationship OS</title>
   <style>:root {
   --bg:#f7f3ee; --paper:#fffdfa; --ink:#263238; --muted:#6f7779;
@@ -61,6 +62,130 @@ button,input,textarea,select{font:inherit} button{cursor:pointer}
 .top-actions{display:flex;gap:4px;align-items:center}.profile-list{display:grid;gap:10px;margin:18px 0}.profile-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:15px;background:#fff}.profile-row strong{display:block}.profile-row span{display:block;font-size:12px;color:var(--muted);margin-top:3px;line-height:1.35}.profile-row .secondary{min-width:96px}.context-note{padding:11px 13px;border-left:3px solid var(--sage);background:#f4f7f3;border-radius:0 12px 12px 0;color:#5e6962;font-size:12px;line-height:1.45;margin-bottom:18px}
 button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible,label.file-action:focus-within{outline:3px solid rgba(114,139,122,.32);outline-offset:2px}
 @media(max-width:520px){.top-actions{gap:0}.reset-btn{font-size:12px;padding:8px 6px}.profile-row{align-items:flex-start}.profile-row .secondary{min-width:82px;padding:0 11px}}
+
+/* A quiet journal: paper, botanical lines, and restrained color. */
+:root {
+  --bg: #f6f2eb;
+  --paper: #fffcf7;
+  --ink: #303d36;
+  --muted: #69736b;
+  --sage: #58725f;
+  --sage-soft: #e8eee5;
+  --accent: #a26f65;
+  --accent-soft: #f0dfd8;
+  --line: #e4dfd4;
+  --shadow: 0 18px 55px rgba(58, 65, 47, .055), 0 2px 8px rgba(58, 65, 47, .025);
+  --radius: 24px;
+}
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 5% 4%, rgba(210, 224, 202, .45), transparent 45%),
+    radial-gradient(ellipse at 98% 20%, rgba(237, 208, 195, .35), transparent 42%),
+    radial-gradient(rgba(112, 106, 85, .055) .6px, transparent .6px);
+  background-size: auto, auto, 5px 5px;
+  background-attachment: fixed;
+}
+.hero-card, .card {
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+.welcome-card {
+  position: relative;
+  isolation: isolate;
+  padding: 38px;
+  border-top: 3px solid #b4c2ab;
+  background: radial-gradient(ellipse at 100% 0%, #edf0e5 0, transparent 44%), var(--paper);
+}
+.welcome-card .eyebrow { max-width: 78%; font-size: 11px; line-height: 1.65; letter-spacing: .11em; }
+.botanical-corner {
+  position: absolute;
+  z-index: -1;
+  right: 10px;
+  top: 8px;
+  width: 112px;
+  height: 128px;
+  color: #718568;
+  opacity: .6;
+  pointer-events: none;
+}
+.botanical-bud { fill: #bb8e7e; }
+.hero-card h1, .card h2, .result-hero h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+}
+.welcome-card h1 { font-size: clamp(36px, 7vw, 55px); margin: 21px 0 12px; }
+.welcome-dedication { color: #805b50; font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 18px; line-height: 1.5; }
+.welcome-card p { font-size: 15px; margin: 17px 0 26px; max-width: 47ch; }
+.welcome-card form { border-top: 1px solid var(--line); padding-top: 2px; }
+.route-option { transition: border-color .15s ease, background-color .15s ease; background: #fffefa; }
+.route-option:has(input:checked) { background: #f0f3e9; border-color: #9cad91; }
+.route-option input { accent-color: var(--sage); }
+.route-option strong { font-weight: 650; }
+.route-option small { margin-top: 6px; line-height: 1.45; }
+.primary, .action-grid .primary-action, .compare-actions .primary {
+  background: #48624e;
+  border-color: #48624e;
+  color: #fffefa;
+  box-shadow: 0 3px 9px rgba(50, 72, 49, .10);
+  transition: background-color .15s ease, box-shadow .15s ease;
+}
+@media (hover: hover) {
+  .primary:hover, .action-grid .primary-action:hover, .compare-actions .primary:hover { background: #3b5442; box-shadow: 0 4px 12px rgba(50, 72, 49, .14); }
+  .ghost:hover { background: #f2f3e9; }
+  .route-option:hover { border-color: #acb7a1; }
+}
+.field input[type=text], .field textarea, .field select, .answer-block textarea, .answer-grid textarea, .mirror-item textarea {
+  background: #fffefa;
+  border-color: #d9dfd0;
+}
+.field input:focus, .field textarea:focus, .answer-block textarea:focus, .answer-grid textarea:focus {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(88, 114, 95, .10);
+}
+.topbar {
+  background: rgba(246, 242, 235, .96);
+  border-bottom: 1px solid rgba(209, 216, 199, .65);
+  border-radius: 0 0 18px 18px;
+  margin-bottom: 17px;
+}
+.brand { font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: 400; }
+.brand::before { content: ''; display: inline-block; width: 9px; height: 14px; margin-right: 7px; border-radius: 12px 0 12px 0; background: #a4b39a; transform: rotate(-18deg); }
+.progress-track { height: 5px; background: #e3e5db; }
+.progress-fill { background: linear-gradient(90deg, #738d6e, #ba9381); }
+.crumb { background: #efeee5; color: #646e60; }
+.crumb.active { background: var(--sage); color: #fffefa; }
+.card { border-top: 2px solid #d4ddc9; }
+.stage-badge { letter-spacing: .04em; font-size: 12px; }
+.question-id { background: #f0e4dc; color: #78554c; }
+.dimension, .matrix-row, .mirror-item, .profile-row { background: #fffefa; border-color: #e1e5d8; }
+.dimension legend { font-weight: 650; }
+.scale-choice span, .matrix-control select { background: #f7f8f0; }
+.scale-choice input:checked+span { background: var(--sage); border-color: var(--sage); }
+.result-hero { background: radial-gradient(ellipse at top right, #f1e3d9, transparent 70%), #e8eee2; border-color: #d6decc; }
+.result-hero h2 { font-size: 34px; }
+.result-section h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; color: #40523f; }
+.answer-accordion { background: #fffefa; }
+.answer-accordion summary::marker { color: #7a9070; }
+.voice { background: #f4f5ed; }
+.compare-columns .voice:nth-child(2) { background: #f8f0e9; }
+.footer-note { color: #69736b; line-height: 1.5; }
+@media (max-width: 520px) {
+  .welcome-card { padding: 27px 24px; }
+  .welcome-card .eyebrow { max-width: 76%; font-size: 10px; }
+  .welcome-card h1 { margin-top: 23px; font-size: clamp(33px, 8.8vw, 45px); }
+  .welcome-dedication { max-width: 25ch; font-size: 17px; }
+  .botanical-corner { width: 86px; height: 100px; right: 2px; top: 9px; opacity: .5; }
+  .card h2 { font-size: 29px; line-height: 1.17; }
+  .question-prompt { font-size: 16px; }
+  .scale-choice span { height: 42px; }
+  .topbar { margin-bottom: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
 </style>
 </head>
 <body>
@@ -565,9 +690,16 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
   }
 
   function renderWelcome(){
-    app.innerHTML=shell(`<main class="welcome"><section class="hero-card">
+    app.innerHTML=shell(`<main class="welcome"><section class="hero-card welcome-card">
+      <svg class="botanical-corner" viewBox="0 0 140 160" fill="none" aria-hidden="true" focusable="false">
+        <path d="M36 153C44 118 43 89 58 59C69 38 89 22 105 9M64 155C65 123 88 107 96 79C101 63 100 44 94 31" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M46 111C24 107 17 92 19 78C37 80 49 94 46 111ZM51 79C34 67 33 51 39 41C52 50 59 64 51 79ZM70 42C65 23 75 10 87 6C91 22 82 36 70 42ZM82 111C87 92 101 87 115 90C111 105 98 114 82 111ZM98 74C111 69 123 56 120 43C105 48 97 60 98 74Z" fill="currentColor" fill-opacity=".10" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+        <path d="M42 137C26 137 14 129 12 117C28 115 40 124 42 137Z" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-width="1.1"/>
+        <circle cx="104" cy="10" r="4" class="botanical-bud"/><circle cx="95" cy="30" r="3" class="botanical-bud"/>
+      </svg>
       <div class="eyebrow">Два самостоятельных голоса · одна общая карта</div>
       <h1>Relationship OS</h1>
+      <div class="welcome-dedication">В своём темпе. С вниманием друг к другу.</div>
       <p>Личный интерактивный опросник о том, как менялись отношения, как каждый из вас даёт и получает заботу и что помогает системе работать лучше. Ответы сохраняются только в этом браузере.</p>
       <form id="startForm">
         <div class="field"><label for="name">Имя</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Например, Дмитрий" required></div>

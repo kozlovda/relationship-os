@@ -51,9 +51,16 @@
   }
 
   function renderWelcome(){
-    app.innerHTML=shell(`<main class="welcome"><section class="hero-card">
+    app.innerHTML=shell(`<main class="welcome"><section class="hero-card welcome-card">
+      <svg class="botanical-corner" viewBox="0 0 140 160" fill="none" aria-hidden="true" focusable="false">
+        <path d="M36 153C44 118 43 89 58 59C69 38 89 22 105 9M64 155C65 123 88 107 96 79C101 63 100 44 94 31" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M46 111C24 107 17 92 19 78C37 80 49 94 46 111ZM51 79C34 67 33 51 39 41C52 50 59 64 51 79ZM70 42C65 23 75 10 87 6C91 22 82 36 70 42ZM82 111C87 92 101 87 115 90C111 105 98 114 82 111ZM98 74C111 69 123 56 120 43C105 48 97 60 98 74Z" fill="currentColor" fill-opacity=".10" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+        <path d="M42 137C26 137 14 129 12 117C28 115 40 124 42 137Z" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-width="1.1"/>
+        <circle cx="104" cy="10" r="4" class="botanical-bud"/><circle cx="95" cy="30" r="3" class="botanical-bud"/>
+      </svg>
       <div class="eyebrow">Два самостоятельных голоса · одна общая карта</div>
       <h1>Relationship OS</h1>
+      <div class="welcome-dedication">В своём темпе. С вниманием друг к другу.</div>
       <p>Личный интерактивный опросник о том, как менялись отношения, как каждый из вас даёт и получает заботу и что помогает системе работать лучше. Ответы сохраняются только в этом браузере.</p>
       <form id="startForm">
         <div class="field"><label for="name">Имя</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Например, Дмитрий" required></div>
